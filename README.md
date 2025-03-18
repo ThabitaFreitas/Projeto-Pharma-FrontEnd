@@ -1,140 +1,74 @@
-# Projeto de Sistema - Backend (Flask)
+# Projeto Pharma - Frontend
 
-Este repositório contém o backend desenvolvido com **Flask** para gerenciar ações de marketing, onde você pode realizar operações como cadastrar, editar, deletar e listar ações de marketing.
+Este repositório contém o frontend para gestão de verbas de ações de marketing. Ele se conecta ao backend Flask que permite realizar operações CRUD em ações de marketing.
 
 ## Tecnologias Utilizadas
 
-- **Flask** - Framework web para Python.
-- **SQLAlchemy** - ORM para interagir com o banco de dados SQLite.
-- **Flask-CORS** - Para permitir requisições de diferentes origens (CORS).
-- **SQLite** - Banco de dados leve para persistência de dados.
+- **HTML5** - Linguagem de marcação usada para estruturar o conteúdo da página.
+- **CSS** - Estilos para a formatação da interface.
+- **JavaScript** (jQuery) - Manipulação de dados e interação com a API.
+- **Bootstrap 5** - Framework CSS para um layout responsivo e componentes prontos.
+- **DataTables** - Biblioteca para melhorar a apresentação de tabelas dinâmicas.
+- **jQuery Mask Plugin** - Para mascarar entradas de data.
 
 ---
 
 ## Estrutura do Projeto
 
-A estrutura do projeto backend é simples e organizada:
+A estrutura do projeto frontend é simples e organizada:
 
-/backend │ ├── app.py # Arquivo principal do backend ├── /migrations # Diretório de migrações do banco de dados └── requirements.txt # Dependências do projeto
+/frontend │ ├── index.html # Arquivo HTML principal ├── style.css # Arquivo de estilo personalizado ├── pharmaviews.png # Logotipo da empresa ├── /node_modules # Diretório de dependências do Node (se for utilizado) └── README.md # Este arquivo
 
 yaml
 Copy
 
 ---
 
-## Como Rodar o Backend
+## Como Rodar o Frontend
 
 ### Pré-requisitos
 
-Antes de rodar o backend, tenha certeza de que as seguintes ferramentas estão instaladas:
+Não há necessidade de instalar pacotes específicos para rodar o frontend, pois ele utiliza links CDN para as bibliotecas necessárias. Porém, se você deseja rodar o projeto localmente, siga as instruções abaixo.
 
-- **Python 3.7+**
-- **Pip** (gerenciador de pacotes Python)
-
-### Instalação
+### Rodando o Frontend
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/SEU-REPOSITORIO/backend.git
-   cd backend
-Crie um ambiente virtual (recomendado):
+   git clone https://github.com/SEU-REPOSITORIO/frontend.git
+   cd frontend
+Abra o arquivo index.html em seu navegador preferido.
+Funcionalidades
+O frontend permite ao usuário gerenciar as ações de marketing, com a possibilidade de:
 
-bash
-Copy
-python -m venv venv
-source venv/bin/activate  # No Windows: venv\Scripts\activate
-Instale as dependências:
+Adicionar nova ação: Escolher o tipo de ação, inserir a data prevista e o valor do investimento.
+Visualizar ações cadastradas: Tabelas dinâmicas que mostram as ações de marketing.
+Editar ações: Alterar os dados de uma ação já cadastrada.
+Excluir ações: Remover uma ação da tabela.
+Interação com a API
+A aplicação se comunica com a API backend através de requisições HTTP:
 
-bash
-Copy
-pip install -r requirements.txt
-Certifique-se de que o banco de dados esteja configurado corretamente. O código usa um banco de dados SQLite chamado site.db que será criado automaticamente ao rodar o servidor pela primeira vez.
+POST: Criação de novas ações.
+PATCH: Edição de ações existentes.
+DELETE: Exclusão de ações.
+GET: Listagem de todas as ações de marketing.
+Estrutura da Tabela
+A tabela de ações de marketing contém as seguintes colunas:
 
-Executando o Servidor
-Inicie o servidor Flask:
-bash
-Copy
-python app.py
-O servidor estará disponível em http://localhost:5153.
+Ação: Tipo da ação (Ex.: Palestra, Evento, Apoio Gráfico).
+Data Prevista: A data em que a ação está prevista para acontecer.
+Investimento Previsto: O valor estimado para o investimento na ação.
+Além disso, existem botões de Editar e Excluir para cada linha, permitindo que o usuário altere ou remova uma ação de marketing.
 
-Endpoints da API
-A API permite realizar operações CRUD (Create, Read, Update, Delete) para as ações de marketing.
+Validations
+As validações são feitas diretamente no frontend antes de enviar os dados para a API:
 
-GET /marketing-actions
-Retorna todas as ações de marketing cadastradas.
-
-Resposta:
-
-json
-Copy
-[
-    {
-        "id": 1,
-        "action": "Palestra",
-        "predicted_date": "25/12/2025",
-        "predicted_investment": 1000.00
-    },
-    ...
-]
-POST /marketing-actions
-Cria uma nova ação de marketing.
-
-Corpo da Requisição (JSON):
-
-json
-Copy
-{
-    "action": "Evento",
-    "predicted_date": "10/10/2025",
-    "predicted_investment": 2000.00
-}
-Resposta:
-
-json
-Copy
-{}
-DELETE /marketing-actions/{id}
-Deleta uma ação de marketing pelo ID.
-
-Resposta:
-
-json
-Copy
-{
-    "message": "Ação de marketing deletada!"
-}
-PATCH /marketing-actions/{id}
-Atualiza uma ação de marketing existente.
-
-Corpo da Requisição (JSON):
-
-json
-Copy
-{
-    "action": "Apoio Gráfico",
-    "predicted_date": "15/11/2025",
-    "predicted_investment": 1500.00
-}
-Resposta:
-
-json
-Copy
-{
-    "message": "Ação de marketing atualizada!"
-}
-Validações
-Ao enviar dados para criar ou atualizar uma ação de marketing, as seguintes validações são aplicadas:
-
-Ação: Deve ser uma das opções válidas: "Palestra", "Evento", "Apoio Gráfico".
-Investimento: Deve ser um número positivo.
-Data: A data deve estar no formato dd/mm/yyyy e deve ser pelo menos 10 dias à frente da data atual.
-Se algum desses campos for inválido, a API retornará um erro com a mensagem correspondente.
-
+Ação: O usuário deve selecionar um tipo de ação válido (Palestra, Evento, Apoio Gráfico).
+Data: O formato da data deve ser DD/MM/AAAA e a data precisa ser no futuro (pelo menos 10 dias após a data atual).
+Investimento: O campo de investimento deve ser um valor numérico positivo.
 Dependências
-As dependências do projeto estão listadas no arquivo requirements.txt:
+O projeto depende das seguintes bibliotecas:
 
-txt
-Copy
-Flask==2.0.1
-Flask-SQLAlchemy==2.5.1
-Flask-CORS==3.1.1
+Bootstrap: Framework para estilização rápida e responsiva.
+jQuery: Biblioteca para manipulação de DOM e requisições AJAX.
+DataTables: Para criar tabelas dinâmicas com suporte a ordenação, pesquisa e paginação.
+jQuery Mask Plugin: Para mascarar o campo de data.
