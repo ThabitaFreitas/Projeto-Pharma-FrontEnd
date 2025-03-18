@@ -36,39 +36,55 @@ Não há necessidade de instalar pacotes específicos para rodar o frontend, poi
    ```bash
    git clone https://github.com/SEU-REPOSITORIO/frontend.git
    cd frontend
-Abra o arquivo index.html em seu navegador preferido.
-Funcionalidades
-O frontend permite ao usuário gerenciar as ações de marketing, com a possibilidade de:
+# 📌 Guia de Uso do Frontend - Gestão de Ações de Marketing  
 
-Adicionar nova ação: Escolher o tipo de ação, inserir a data prevista e o valor do investimento.
-Visualizar ações cadastradas: Tabelas dinâmicas que mostram as ações de marketing.
-Editar ações: Alterar os dados de uma ação já cadastrada.
-Excluir ações: Remover uma ação da tabela.
-Interação com a API
-A aplicação se comunica com a API backend através de requisições HTTP:
+## 🚀 Abrindo o Projeto  
+1. Localize o arquivo `index.html`.  
+2. Abra-o no seu navegador preferido.  
 
-POST: Criação de novas ações.
-PATCH: Edição de ações existentes.
-DELETE: Exclusão de ações.
-GET: Listagem de todas as ações de marketing.
-Estrutura da Tabela
-A tabela de ações de marketing contém as seguintes colunas:
+---  
 
-Ação: Tipo da ação (Ex.: Palestra, Evento, Apoio Gráfico).
-Data Prevista: A data em que a ação está prevista para acontecer.
-Investimento Previsto: O valor estimado para o investimento na ação.
-Além disso, existem botões de Editar e Excluir para cada linha, permitindo que o usuário altere ou remova uma ação de marketing.
+## 🎯 Funcionalidades  
+O frontend permite gerenciar ações de marketing com as seguintes opções:  
 
-Validations
-As validações são feitas diretamente no frontend antes de enviar os dados para a API:
+✅ **Adicionar Nova Ação**  
+- Escolha o tipo de ação.  
+- Insira a data prevista.  
+- Defina o valor do investimento.  
 
-Ação: O usuário deve selecionar um tipo de ação válido (Palestra, Evento, Apoio Gráfico).
-Data: O formato da data deve ser DD/MM/AAAA e a data precisa ser no futuro (pelo menos 10 dias após a data atual).
-Investimento: O campo de investimento deve ser um valor numérico positivo.
-Dependências
-O projeto depende das seguintes bibliotecas:
+✅ **Visualizar Ações Cadastradas**  
+- Tabela dinâmica exibindo todas as ações de marketing.  
 
-Bootstrap: Framework para estilização rápida e responsiva.
-jQuery: Biblioteca para manipulação de DOM e requisições AJAX.
-DataTables: Para criar tabelas dinâmicas com suporte a ordenação, pesquisa e paginação.
-jQuery Mask Plugin: Para mascarar o campo de data.
+✅ **Editar Ações**  
+- Modifique os dados de uma ação já cadastrada.  
+
+✅ **Excluir Ações**  
+- Remova uma ação da tabela.  
+
+---  
+
+## 🔗 Comunicação com a API  
+A aplicação realiza requisições HTTP para interagir com o backend:  
+
+🔹 `POST` → Criar novas ações.  
+🔹 `PATCH` → Editar ações existentes.  
+🔹 `DELETE` → Excluir ações.  
+🔹 `GET` → Listar todas as ações de marketing.  
+
+---  
+
+## 📊 Estrutura da Tabela  
+A tabela de ações de marketing contém as seguintes colunas:  
+
+📌 **Ação** → Tipo da ação (Ex.: Palestra, Evento, Apoio Gráfico).  
+📅 **Data Prevista** → Quando a ação está programada.  
+💰 **Investimento Previsto** → Valor estimado do investimento.  
+🛠 **Ações** → Botões de **Editar** e **Excluir** para cada linha.  
+
+---  
+
+## ✅ Validações no Frontend  
+Antes de enviar os dados para a API, algumas regras são verificadas:  
+
+✔ **Ação:** O usuário deve selecionar um tipo de ação válido (*Palestra, Evento, Apoio Gráfico*).  
+✔ **Data:** Formato obrigatório `DD/MM/AAAA` e
