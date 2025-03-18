@@ -1,4 +1,4 @@
-# Projeto Pharma - Frontend
+# Projeto Pharma - Front-end
 
 Este repositório contém o frontend para gestão de verbas de ações de marketing. Ele se conecta ao backend Flask que permite realizar operações CRUD em ações de marketing.
 
