@@ -87,4 +87,15 @@ A tabela de ações de marketing contém as seguintes colunas:
 Antes de enviar os dados para a API, algumas regras são verificadas:  
 
 ✔ **Ação:** O usuário deve selecionar um tipo de ação válido (*Palestra, Evento, Apoio Gráfico*).  
-✔ **Data:** Formato obrigatório `DD/MM/AAAA` e
+✔ **Data:** Formato obrigatório `DD/MM/AAAA` e e deve estar pelo menos **10 dias no futuro**.  
+✔ **Investimento:** O valor precisa ser **numérico e positivo**.  
+
+---  
+
+## 📦 Dependências  
+O projeto utiliza as seguintes bibliotecas:  
+
+📌 **Bootstrap** → Estilização responsiva e rápida.  
+📌 **jQuery** → Manipulação de DOM e requisições AJAX.  
+📌 **DataTables** → Tabelas dinâmicas com pesquisa, ordenação e paginação.  
+📌 **jQuery Mask Plugin** → Máscara para formatação de datas
