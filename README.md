@@ -13,16 +13,24 @@ Este repositório contém o frontend para gestão de verbas de ações de market
 
 ---
 
-## 📁 Estrutura do Projeto
+## 📁 Estrutura do Projeto 
 
-A estrutura do projeto frontend é simples e organizada:
+A estrutura do projeto frontend é simples e organizada:  
 
-/frontend
-│── 📄 index.html # Arquivo HTML principal
-│── 🎨 style.css # Arquivo de estilo personalizado
-│── 🖼️ pharmaviews.png # Logotipo da empresa
-│── 📂 node_modules # Diretório de dependências do Node (se for utilizado)
-└── 📄 README.md # Documentação do projeto
+**📄 index.html**  
+Arquivo HTML principal  
+
+**🎨 style.css**  
+Arquivo de estilo personalizado  
+
+**🖼️ pharmaviews.png**  
+Logotipo da empresa  
+
+**📂 node_modules**  
+Diretório de dependências do Node (se for utilizado)  
+
+**📄 README.md**  
+Documentação do projeto  
 
 
 ---
