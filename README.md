@@ -26,9 +26,6 @@ Arquivo de estilo personalizado
 **🖼️ pharmaviews.png**  
 Logotipo da empresa  
 
-**📂 node_modules**  
-Diretório de dependências do Node (se for utilizado)  
-
 **📄 README.md**  
 Documentação do projeto  
 
